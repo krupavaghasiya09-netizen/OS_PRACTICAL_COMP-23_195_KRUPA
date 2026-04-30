@@ -1,0 +1,20 @@
+//Write a shell script which will accept a number b and display first n prime numbers as output 
+
+echo "enter how many prime numbers you want:"                                                                                                                                                                                                                  echo "enter how many prime numbers you want:"
+read n
+count=0
+for((num=2;count<n;num++))
+do
+for((i=2;i<num;i++))
+do
+if [ $(($num%$i)) -eq 0 ]
+then
+break
+fi
+done 
+if [ $i -eq $num ]
+then
+echo $num
+count=$(($count+1))
+fi
+done
