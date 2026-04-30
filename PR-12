@@ -1,0 +1,18 @@
+//Write a shell script to mail a common message to all users who are currently logged in
+
+echo "Enter message:"
+read message
+
+if [ -z "$message" ]
+then
+    echo "Message cannot be empty"
+    exit 1
+fi
+
+if ! wall <<< "$message"
+then
+    echo "Failed to send message"
+    exit 1
+fi
+
+echo "Message sent successfully"
