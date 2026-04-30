@@ -1,0 +1,20 @@
+//Write a shell script which will generate first n fibonnacci numbers like: 1,1, 2, 3, 5, 13, …
+
+echo "enter the value of n:"                                                                                                                                                                                                             echo "enter the value of n:"
+read n
+a=1
+b=1
+echo "fibonacii series"
+if [ $n -ge 1 ]; then
+echo -n "$a "
+fi
+if [ $n -ge 2 ]; then
+echo -n "$b "
+fi
+for((i=3;i<=n;i++))
+do
+c=$((a+b))
+echo -n "$c "
+a=$b
+b=$c
+done
