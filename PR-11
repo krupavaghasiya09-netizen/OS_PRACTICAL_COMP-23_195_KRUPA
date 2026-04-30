@@ -1,0 +1,13 @@
+//Write a shell script to display all executable files, directories and zero sized files from current directory. 
+
+echo "Executable files:"
+files=$(find . -type f -executable)
+echo "$files"
+
+echo "Directories:"
+dirs=$(find . -type d)
+echo "$dirs"
+
+echo "Zero sized files:"
+zeros=$(find . -type f -size 0)
+echo "$zeros"
