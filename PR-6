@@ -1,0 +1,11 @@
+//Write a shell script to find if the given string is Palindrome or not? 
+
+echo "enter a string"
+read str
+rev=$(echo $str|rev)
+if [ "str" = "$rev" ]
+then
+echo "It is palindrome"
+else
+echo "It is not a palindrom"
+fi
