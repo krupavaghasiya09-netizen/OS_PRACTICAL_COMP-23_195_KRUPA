@@ -1,0 +1,41 @@
+//Write a shell script to generate marksheet of a student. Take 3 subjects, calculate and display total marks, percentage and Class obtained by the student 
+
+echo "enter your name"
+read name 
+echo "enter your enrollement number"
+read enroll
+echo "enter ADA subject marks:"
+reaD ADA
+echo "enter  COA subject marks"
+read COA
+echo "enter ES subject marks"
+read ES
+echo "_____marksheet______"
+echo "your name is : $name"
+echo "your enrollement number is : $enroll"
+echo "your subject wise marks is : "
+echo "ADA:- $ADA"
+echo "COA:-$COA"
+echo "ES:-$ES" 
+sum=$(($ADA+$COA+$ES))
+echo "total sum is : $sum"
+per=$(($sum*100/300))
+echo "percentage is : $per"
+if [ $per -ge 80 ]
+then 
+echo "grade is : A"
+elif [ $per -ge 70 ]
+then 
+echo "grade is B"
+elif [ $per -ge 60 ]
+then                                                                                                                                                                                                                               echo "grade is C" 
+elif [ $per -ge 50 ]
+then 
+echo "grade is D"
+elif [ $per -ge 40 ]
+then 
+echo "grade is E"
+elif [ $per -ge 30 ]
+then 
+echo "grade is F"
+fi
