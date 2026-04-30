@@ -1,0 +1,39 @@
+//Write an awk program using function, which convert each word in a given text into capital 
+
+# AWK is a powerful tool for text processing, reporting, and data extraction in Unix/Linux systems.
+# AWK is a text-processing programming language used to:
+
+# Scan files line by line
+# Process and manipulate text
+# Generate formatted output
+
+
+# Variable            Meaning
+# $1, $2, ...        Fields (words in a line)
+# $0            Entire line
+# NF            Number of fields
+# NR            Line number
+
+# awk '{ print }' file.txt -> prints entire file.
+# awk '{ print $1 }' file.txt -> print first column.
+# awk '/hello/ { print }' file.txt -> print line containinf word 'hello'.
+
+
+#Save the program in a file, e.g., capital.awk and Run using:
+# awk -f capital.awk input.txt
+# here input.txt in an input file to be passed as command line argument
+
+
+# File: to_upper.awk
+
+# Function to convert a word to uppercase
+function toCapital(word) {
+    return toupper(word)
+}
+
+{
+    for (i = 1; i <= NF; i++) {
+        $i = toCapital($i)
+    }
+    print
+
